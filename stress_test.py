@@ -14,7 +14,7 @@ NUM_REQUESTS = 500
 SLEEP_COUNT = 0.05
 
 
-def call_predict_endpoint(n: Union[int, str]):
+def call_predict_endpoint(n: int):
     # load the input image and construct the payload for the request
     image: bytes = open(IMAGE_PATH, "rb").read()
     payload: Dict = {"image": image}

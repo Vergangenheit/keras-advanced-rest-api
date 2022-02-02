@@ -1,6 +1,9 @@
 import numpy as np
+from numpy import ndarray
 import base64
 import sys
+from typing import Optional, Tuple
+
 
 def base64_encode_image(a: bytes) -> str:
     # serialize the input images to be stored in redis
@@ -8,7 +11,7 @@ def base64_encode_image(a: bytes) -> str:
     return base64.b64encode(a).decode("utf-8")
 
 
-def base64_decode_image(a: bytes, dtype:Optional[object], shape: Tuple) -> ndarray:
+def base64_decode_image(a: bytes, dtype: Optional[object], shape: Tuple) -> ndarray:
     # if this is Python 3, we need the extra step of encoding the
     # serialized NumPy string as a byte object
     if sys.version_info.major == 3:
